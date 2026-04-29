@@ -9,7 +9,7 @@ const DetailBerita = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/berita/${id}`)
+      .get(`https://desa-sembung-be.vercel.app/api/berita/${id}`)
       .then((res) => {
         setBerita(res.data);
         setLoading(false);
@@ -41,7 +41,7 @@ const DetailBerita = () => {
       <article className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100">
         {/* Gambar Utama */}
         <img
-          src={`http://localhost:5000/uploads/berita/${berita.gambar}`}
+          src={`https://desa-sembung-be.vercel.app/uploads/berita/${berita.gambar}`}
           className="w-full h-[400px] object-cover"
           alt={berita.judul}
           onError={(e) =>

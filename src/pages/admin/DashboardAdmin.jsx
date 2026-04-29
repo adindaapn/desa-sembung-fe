@@ -16,7 +16,7 @@ const DashboardAdmin = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/surat/admin/all")
+      .get("https://desa-sembung-be.vercel.app/api/surat/admin/all")
       .then((res) => {
         const data = res.data;
         setStats({

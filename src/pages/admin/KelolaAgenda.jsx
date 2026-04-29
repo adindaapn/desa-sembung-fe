@@ -14,7 +14,7 @@ const KelolaAgenda = () => {
 
   const fetchAgenda = () => {
     axios
-      .get("http://localhost:5000/api/agenda")
+      .get("https://desa-sembung-be.vercel.app/api/agenda")
       .then((res) => setAgenda(res.data));
   };
 
@@ -24,23 +24,25 @@ const KelolaAgenda = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/agenda/add", form).then(() => {
-      alert("Agenda Berhasil Ditambah!");
-      setForm({
-        nama_kegiatan: "",
-        tanggal: "",
-        waktu: "",
-        lokasi: "",
-        keterangan: "",
+    axios
+      .post("https://desa-sembung-be.vercel.app/api/agenda/add", form)
+      .then(() => {
+        alert("Agenda Berhasil Ditambah!");
+        setForm({
+          nama_kegiatan: "",
+          tanggal: "",
+          waktu: "",
+          lokasi: "",
+          keterangan: "",
+        });
+        fetchAgenda();
       });
-      fetchAgenda();
-    });
   };
 
   const handleDelete = (id) => {
     if (window.confirm("Hapus agenda ini?")) {
       axios
-        .delete(`http://localhost:5000/api/agenda/delete/${id}`)
+        .delete(`https://desa-sembung-be.vercel.app/api/agenda/delete/${id}`)
         .then(() => fetchAgenda());
     }
   };

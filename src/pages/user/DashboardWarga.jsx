@@ -17,7 +17,7 @@ const DashboardWarga = () => {
   useEffect(() => {
     if (user && user.id) {
       axios
-        .get(`http://localhost:5000/api/surat/user/${user.id}`)
+        .get(`https://desa-sembung-be.vercel.app/api/surat/user/${user.id}`)
         .then((res) => setRiwayat(res.data))
         .catch((err) => console.error("Gagal ambil data:", err));
     }
@@ -25,7 +25,9 @@ const DashboardWarga = () => {
 
   const handleDownload = async (fileName, originalName) => {
     try {
-      const response = await fetch(`http://localhost:5000/uploads/${fileName}`);
+      const response = await fetch(
+        `https://desa-sembung-be.vercel.app/uploads/${fileName}`,
+      );
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");

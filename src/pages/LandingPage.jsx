@@ -13,17 +13,17 @@ const LandingPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/berita")
+      .get("https://desa-sembung-be.vercel.app/api/berita")
       .then((res) => setBerita(res.data))
       .catch((err) => console.log("Gagal memuat berita:", err));
 
     axios
-      .get("http://localhost:5000/api/agenda")
+      .get("https://desa-sembung-be.vercel.app/api/agenda")
       .then((res) => setAgenda(res.data))
       .catch((err) => console.log("Gagal memuat agenda:", err));
 
     axios
-      .get("http://localhost:5000/api/statistik")
+      .get("https://desa-sembung-be.vercel.app/api/statistik")
       .then((res) => setStatistik(res.data))
       .catch((err) => console.log("Gagal memuat statistik:", err));
   }, []);
@@ -213,7 +213,7 @@ const LandingPage = () => {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={`http://localhost:5000/uploads/berita/${item.gambar}`}
+                    src={`https://desa-sembung-be.vercel.app/uploads/berita/${item.gambar}`}
                     className="h-52 md:h-60 w-full object-cover group-hover:scale-105 transition duration-500"
                     alt={item.judul}
                     onError={(e) =>

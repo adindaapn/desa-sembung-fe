@@ -30,7 +30,9 @@ const KelolaBerita = () => {
   const fetchBerita = async () => {
     setLoadingList(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/berita");
+      const res = await axios.get(
+        "https://desa-sembung-be.vercel.app/api/berita",
+      );
       setBeritaList(res.data);
     } catch (err) {
       console.error(err);
@@ -58,7 +60,10 @@ const KelolaBerita = () => {
     data.append("gambar", file);
 
     try {
-      await axios.post("http://localhost:5000/api/berita/add", data);
+      await axios.post(
+        "https://desa-sembung-be.vercel.app/api/berita/add",
+        data,
+      );
       alert("Berita Berhasil Diupload!");
       setFormData({ judul: "", kategori: "", isi: "" });
       setFile(null);
@@ -73,7 +78,9 @@ const KelolaBerita = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Yakin ingin menghapus berita ini?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/berita/delete/${id}`);
+      await axios.delete(
+        `https://desa-sembung-be.vercel.app/api/berita/delete/${id}`,
+      );
       alert("Berita berhasil dihapus!");
       fetchBerita();
     } catch (err) {
@@ -106,7 +113,7 @@ const KelolaBerita = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/berita/update/${editData.id}`,
+        `https://desa-sembung-be.vercel.app/api/berita/update/${editData.id}`,
         data,
       );
       alert("Berita berhasil diperbarui!");
@@ -264,7 +271,7 @@ const KelolaBerita = () => {
                       <img
                         src={
                           berita.gambar
-                            ? `http://localhost:5000/uploads/berita/${berita.gambar}`
+                            ? `https://desa-sembung-be.vercel.app/uploads/berita/${berita.gambar}`
                             : "https://via.placeholder.com/80"
                         }
                         alt={berita.judul}
@@ -379,7 +386,7 @@ const KelolaBerita = () => {
                 {/* Preview foto lama */}
                 {!editPreview && editData.gambar && (
                   <img
-                    src={`http://localhost:5000/uploads/berita/${editData.gambar}`}
+                    src={`https://desa-sembung-be.vercel.app/uploads/berita/${editData.gambar}`}
                     alt="Foto saat ini"
                     className="mb-2 h-32 rounded-xl object-cover border"
                   />

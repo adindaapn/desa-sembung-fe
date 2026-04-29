@@ -15,7 +15,7 @@ const AjukanSurat = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/surat/jenis")
+      .get("https://desa-sembung-be.vercel.app/api/surat/jenis")
       .then((res) => setJenisSuratList(res.data))
       .catch((err) => console.error("Gagal ambil jenis surat:", err));
   }, []);
@@ -35,9 +35,13 @@ const AjukanSurat = () => {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/surat/ajukan", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        "https://desa-sembung-be.vercel.app/api/surat/ajukan",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        },
+      );
       alert("Sukses! Pengajuan surat berhasil dikirim.");
       navigate("/warga/dashboard");
     } catch (error) {

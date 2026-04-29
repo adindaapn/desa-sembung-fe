@@ -33,7 +33,7 @@ const RiwayatSurat = () => {
   const fetchData = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/surat/admin/riwayat", {
+      .get("https://desa-sembung-be.vercel.app/api/surat/admin/riwayat", {
         params: { bulan, tahun, status: statusFilter },
       })
       .then((res) => {
@@ -263,7 +263,7 @@ const RiwayatSurat = () => {
                           {item.path_file && (
                             <a
                               href={
-                                "http://localhost:5000/uploads/" +
+                                "https://desa-sembung-be.vercel.app/uploads/" +
                                 item.path_file
                               }
                               target="_blank"
@@ -276,7 +276,7 @@ const RiwayatSurat = () => {
                           {item.status === "selesai" && item.file_hasil && (
                             <a
                               href={
-                                "http://localhost:5000/uploads/" +
+                                "https://desa-sembung-be.vercel.app/uploads/" +
                                 item.file_hasil
                               }
                               target="_blank"
@@ -358,7 +358,7 @@ const RiwayatSurat = () => {
                               {item.path_file && (
                                 <a
                                   href={
-                                    "http://localhost:5000/uploads/" +
+                                    "https://desa-sembung-be.vercel.app/uploads/" +
                                     item.path_file
                                   }
                                   target="_blank"
@@ -371,7 +371,7 @@ const RiwayatSurat = () => {
                               {item.status === "selesai" && item.file_hasil && (
                                 <a
                                   href={
-                                    "http://localhost:5000/uploads/" +
+                                    "https://desa-sembung-be.vercel.app/uploads/" +
                                     item.file_hasil
                                   }
                                   target="_blank"

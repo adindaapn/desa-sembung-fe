@@ -13,7 +13,9 @@ const DataPenduduk = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/warga");
+      const res = await axios.get(
+        "https://desa-sembung-be.vercel.app/api/auth/warga",
+      );
       setPenduduk(res.data);
     } catch (err) {
       console.error("Gagal ambil data penduduk:", err);

@@ -34,7 +34,10 @@ const Register = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post(
+        "https://desa-sembung-be.vercel.app/api/auth/register",
+        formData,
+      );
       alert(
         "Pendaftaran Berhasil! Silakan Login dengan Username/Email baru Anda.",
       );

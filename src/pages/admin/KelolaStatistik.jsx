@@ -22,7 +22,9 @@ const KelolaStatistik = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/statistik");
+      const res = await axios.get(
+        "https://desa-sembung-be.vercel.app/api/statistik",
+      );
       setStats(res.data);
     } catch (err) {
       console.error("Gagal mengambil data statistik", err);
@@ -51,9 +53,12 @@ const KelolaStatistik = () => {
 
   const handleSave = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/statistik/${id}`, {
-        value: tempValue,
-      });
+      await axios.put(
+        `https://desa-sembung-be.vercel.app/api/statistik/${id}`,
+        {
+          value: tempValue,
+        },
+      );
       setEditingId(null);
       fetchStats();
     } catch (err) {

@@ -22,7 +22,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/auth/profile/${userLocal.id}`,
+          `https://desa-sembung-be.vercel.app/api/auth/profile/${userLocal.id}`,
         );
         if (res.data) {
           setFormData({ ...res.data, password: "" });
@@ -76,7 +76,7 @@ const Profile = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/auth/profile/${userLocal.id}`,
+        `https://desa-sembung-be.vercel.app/api/auth/profile/${userLocal.id}`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } },
       );
@@ -126,7 +126,7 @@ const Profile = () => {
                 src={
                   preview ||
                   (formData.foto
-                    ? `http://localhost:5000/uploads/profile/${formData.foto}`
+                    ? `https://desa-sembung-be.vercel.app/uploads/profile/${formData.foto}`
                     : "https://via.placeholder.com/150")
                 }
                 alt="Avatar"

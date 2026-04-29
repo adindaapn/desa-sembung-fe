@@ -28,7 +28,7 @@ const DetailPengajuan = () => {
   const fetchDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/surat/detail/${id}`,
+        `https://desa-sembung-be.vercel.app/api/surat/detail/${id}`,
       );
       setDetail(res.data);
     } catch (err) {
@@ -63,14 +63,14 @@ const DetailPengajuan = () => {
         const formData = new FormData();
         formData.append("file", fileHasil);
         await axios.post(
-          `http://localhost:5000/api/surat/admin/upload-hasil/${id}`,
+          `https://desa-sembung-be.vercel.app/api/surat/admin/upload-hasil/${id}`,
           formData,
         );
       }
 
       // 2. Update Status dan Catatan
       await axios.put(
-        `http://localhost:5000/api/surat/admin/verifikasi/${id}`,
+        `https://desa-sembung-be.vercel.app/api/surat/admin/verifikasi/${id}`,
         {
           status,
           catatan: catatan,
@@ -215,7 +215,7 @@ const DetailPengajuan = () => {
               </h3>
               {detail.path_file ? (
                 <a
-                  href={`http://localhost:5000/uploads/${detail.path_file}`}
+                  href={`https://desa-sembung-be.vercel.app/uploads/${detail.path_file}`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-100 transition font-bold text-xs"
@@ -236,7 +236,7 @@ const DetailPengajuan = () => {
                   <FaCheckCircle /> Surat Telah Terbit:
                 </h3>
                 <a
-                  href={`http://localhost:5000/uploads/${detail.file_hasil}`}
+                  href={`https://desa-sembung-be.vercel.app/uploads/${detail.file_hasil}`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition font-bold text-xs shadow-sm"
