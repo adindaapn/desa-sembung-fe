@@ -41,7 +41,11 @@ const DetailBerita = () => {
       <article className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100">
         {/* Gambar Utama */}
         <img
-          src={`https://desa-sembung-be-production.up.railway.app/uploads/berita/${berita.gambar}`}
+          src={
+            berita.gambar?.startsWith("http")
+              ? berita.gambar
+              : `https://desa-sembung-be-production.up.railway.app/uploads/berita/${berita.gambar}`
+          }
           className="w-full h-[400px] object-cover"
           alt={berita.judul}
           onError={(e) =>

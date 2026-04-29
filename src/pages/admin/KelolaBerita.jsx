@@ -271,7 +271,9 @@ const KelolaBerita = () => {
                       <img
                         src={
                           berita.gambar
-                            ? `https://desa-sembung-be-production.up.railway.app/uploads/berita/${berita.gambar}`
+                            ? berita.gambar.startsWith("http")
+                              ? berita.gambar
+                              : `https://desa-sembung-be-production.up.railway.app/uploads/berita/${berita.gambar}`
                             : "https://via.placeholder.com/80"
                         }
                         alt={berita.judul}
@@ -386,7 +388,11 @@ const KelolaBerita = () => {
                 {/* Preview foto lama */}
                 {!editPreview && editData.gambar && (
                   <img
-                    src={`https://desa-sembung-be-production.up.railway.app/uploads/berita/${editData.gambar}`}
+                    src={
+                      editData.gambar?.startsWith("http")
+                        ? editData.gambar
+                        : `https://desa-sembung-be-production.up.railway.app/uploads/berita/${editData.gambar}`
+                    }
                     alt="Foto saat ini"
                     className="mb-2 h-32 rounded-xl object-cover border"
                   />

@@ -126,7 +126,9 @@ const Profile = () => {
                 src={
                   preview ||
                   (formData.foto
-                    ? `https://desa-sembung-be-production.up.railway.app/uploads/profile/${formData.foto}`
+                    ? formData.foto.startsWith("http")
+                      ? formData.foto
+                      : `https://desa-sembung-be-production.up.railway.app/uploads/profile/${formData.foto}`
                     : "https://via.placeholder.com/150")
                 }
                 alt="Avatar"

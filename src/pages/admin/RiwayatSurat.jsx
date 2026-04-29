@@ -266,8 +266,10 @@ const RiwayatSurat = () => {
                           {item.path_file && (
                             <a
                               href={
-                                "https://desa-sembung-be-production.up.railway.app/uploads/" +
-                                item.path_file
+                                item.path_file?.startsWith("http")
+                                  ? item.path_file
+                                  : "https://desa-sembung-be-production.up.railway.app/uploads/" +
+                                    item.path_file
                               }
                               target="_blank"
                               rel="noreferrer"
@@ -279,8 +281,10 @@ const RiwayatSurat = () => {
                           {item.status === "selesai" && item.file_hasil && (
                             <a
                               href={
-                                "https://desa-sembung-be-production.up.railway.app/uploads/" +
-                                item.file_hasil
+                                item.file_hasil?.startsWith("http")
+                                  ? item.file_hasil
+                                  : "https://desa-sembung-be-production.up.railway.app/uploads/" +
+                                    item.file_hasil
                               }
                               target="_blank"
                               rel="noreferrer"
@@ -361,8 +365,10 @@ const RiwayatSurat = () => {
                               {item.path_file && (
                                 <a
                                   href={
-                                    "https://desa-sembung-be-production.up.railway.app/uploads/" +
-                                    item.path_file
+                                    item.path_file?.startsWith("http")
+                                      ? item.path_file
+                                      : "https://desa-sembung-be-production.up.railway.app/uploads/" +
+                                        item.path_file
                                   }
                                   target="_blank"
                                   rel="noreferrer"
@@ -374,8 +380,10 @@ const RiwayatSurat = () => {
                               {item.status === "selesai" && item.file_hasil && (
                                 <a
                                   href={
-                                    "https://desa-sembung-be-production.up.railway.app/uploads/" +
-                                    item.file_hasil
+                                    item.file_hasil?.startsWith("http")
+                                      ? item.file_hasil
+                                      : "https://desa-sembung-be-production.up.railway.app/uploads/" +
+                                        item.file_hasil
                                   }
                                   target="_blank"
                                   rel="noreferrer"

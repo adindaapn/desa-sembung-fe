@@ -215,7 +215,11 @@ const DetailPengajuan = () => {
               </h3>
               {detail.path_file ? (
                 <a
-                  href={`https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`}
+                  href={
+                    detail.path_file?.startsWith("http")
+                      ? detail.path_file
+                      : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`
+                  }
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-100 transition font-bold text-xs"
@@ -236,7 +240,11 @@ const DetailPengajuan = () => {
                   <FaCheckCircle /> Surat Telah Terbit:
                 </h3>
                 <a
-                  href={`https://desa-sembung-be-production.up.railway.app/uploads/${detail.file_hasil}`}
+                  href={
+                    detail.file_hasil?.startsWith("http")
+                      ? detail.file_hasil
+                      : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.file_hasil}`
+                  }
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition font-bold text-xs shadow-sm"
