@@ -35,7 +35,7 @@ const Register = () => {
 
     try {
       await axios.post(
-        "https://desa-sembung-be.vercel.app/api/auth/register",
+        "https://desa-sembung-be-production.up.railway.app/api/auth/register",
         formData,
       );
       alert(

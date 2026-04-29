@@ -15,7 +15,7 @@ const AjukanSurat = () => {
 
   useEffect(() => {
     axios
-      .get("https://desa-sembung-be.vercel.app/api/surat/jenis")
+      .get("https://desa-sembung-be-production.up.railway.app/api/surat/jenis")
       .then((res) => setJenisSuratList(res.data))
       .catch((err) => console.error("Gagal ambil jenis surat:", err));
   }, []);
@@ -36,7 +36,7 @@ const AjukanSurat = () => {
 
     try {
       await axios.post(
-        "https://desa-sembung-be.vercel.app/api/surat/ajukan",
+        "https://desa-sembung-be-production.up.railway.app/api/surat/ajukan",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

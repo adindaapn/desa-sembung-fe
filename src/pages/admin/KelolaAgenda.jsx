@@ -14,7 +14,7 @@ const KelolaAgenda = () => {
 
   const fetchAgenda = () => {
     axios
-      .get("https://desa-sembung-be.vercel.app/api/agenda")
+      .get("https://desa-sembung-be-production.up.railway.app/api/agenda")
       .then((res) => setAgenda(res.data));
   };
 
@@ -25,7 +25,10 @@ const KelolaAgenda = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://desa-sembung-be.vercel.app/api/agenda/add", form)
+      .post(
+        "https://desa-sembung-be-production.up.railway.app/api/agenda/add",
+        form,
+      )
       .then(() => {
         alert("Agenda Berhasil Ditambah!");
         setForm({
@@ -42,7 +45,9 @@ const KelolaAgenda = () => {
   const handleDelete = (id) => {
     if (window.confirm("Hapus agenda ini?")) {
       axios
-        .delete(`https://desa-sembung-be.vercel.app/api/agenda/delete/${id}`)
+        .delete(
+          `https://desa-sembung-be-production.up.railway.app/api/agenda/delete/${id}`,
+        )
         .then(() => fetchAgenda());
     }
   };

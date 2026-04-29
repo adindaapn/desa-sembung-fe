@@ -33,9 +33,12 @@ const RiwayatSurat = () => {
   const fetchData = () => {
     setLoading(true);
     axios
-      .get("https://desa-sembung-be.vercel.app/api/surat/admin/riwayat", {
-        params: { bulan, tahun, status: statusFilter },
-      })
+      .get(
+        "https://desa-sembung-be-production.up.railway.app/api/surat/admin/riwayat",
+        {
+          params: { bulan, tahun, status: statusFilter },
+        },
+      )
       .then((res) => {
         setRiwayat(res.data);
         setLoading(false);
@@ -263,7 +266,7 @@ const RiwayatSurat = () => {
                           {item.path_file && (
                             <a
                               href={
-                                "https://desa-sembung-be.vercel.app/uploads/" +
+                                "https://desa-sembung-be-production.up.railway.app/uploads/" +
                                 item.path_file
                               }
                               target="_blank"
@@ -276,7 +279,7 @@ const RiwayatSurat = () => {
                           {item.status === "selesai" && item.file_hasil && (
                             <a
                               href={
-                                "https://desa-sembung-be.vercel.app/uploads/" +
+                                "https://desa-sembung-be-production.up.railway.app/uploads/" +
                                 item.file_hasil
                               }
                               target="_blank"
@@ -358,7 +361,7 @@ const RiwayatSurat = () => {
                               {item.path_file && (
                                 <a
                                   href={
-                                    "https://desa-sembung-be.vercel.app/uploads/" +
+                                    "https://desa-sembung-be-production.up.railway.app/uploads/" +
                                     item.path_file
                                   }
                                   target="_blank"
@@ -371,7 +374,7 @@ const RiwayatSurat = () => {
                               {item.status === "selesai" && item.file_hasil && (
                                 <a
                                   href={
-                                    "https://desa-sembung-be.vercel.app/uploads/" +
+                                    "https://desa-sembung-be-production.up.railway.app/uploads/" +
                                     item.file_hasil
                                   }
                                   target="_blank"

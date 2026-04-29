@@ -13,7 +13,9 @@ const VerifikasiSurat = () => {
 
   const fetchData = () => {
     axios
-      .get("https://desa-sembung-be.vercel.app/api/surat/admin/list")
+      .get(
+        "https://desa-sembung-be-production.up.railway.app/api/surat/admin/list",
+      )
       .then((res) => setSuratMasuk(res.data))
       .catch((err) => console.error("Gagal ambil data:", err));
   };

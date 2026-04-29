@@ -31,7 +31,7 @@ const KelolaBerita = () => {
     setLoadingList(true);
     try {
       const res = await axios.get(
-        "https://desa-sembung-be.vercel.app/api/berita",
+        "https://desa-sembung-be-production.up.railway.app/api/berita",
       );
       setBeritaList(res.data);
     } catch (err) {
@@ -61,7 +61,7 @@ const KelolaBerita = () => {
 
     try {
       await axios.post(
-        "https://desa-sembung-be.vercel.app/api/berita/add",
+        "https://desa-sembung-be-production.up.railway.app/api/berita/add",
         data,
       );
       alert("Berita Berhasil Diupload!");
@@ -79,7 +79,7 @@ const KelolaBerita = () => {
     if (!window.confirm("Yakin ingin menghapus berita ini?")) return;
     try {
       await axios.delete(
-        `https://desa-sembung-be.vercel.app/api/berita/delete/${id}`,
+        `https://desa-sembung-be-production.up.railway.app/api/berita/delete/${id}`,
       );
       alert("Berita berhasil dihapus!");
       fetchBerita();
@@ -113,7 +113,7 @@ const KelolaBerita = () => {
 
     try {
       await axios.put(
-        `https://desa-sembung-be.vercel.app/api/berita/update/${editData.id}`,
+        `https://desa-sembung-be-production.up.railway.app/api/berita/update/${editData.id}`,
         data,
       );
       alert("Berita berhasil diperbarui!");
@@ -271,7 +271,7 @@ const KelolaBerita = () => {
                       <img
                         src={
                           berita.gambar
-                            ? `https://desa-sembung-be.vercel.app/uploads/berita/${berita.gambar}`
+                            ? `https://desa-sembung-be-production.up.railway.app/uploads/berita/${berita.gambar}`
                             : "https://via.placeholder.com/80"
                         }
                         alt={berita.judul}
@@ -386,7 +386,7 @@ const KelolaBerita = () => {
                 {/* Preview foto lama */}
                 {!editPreview && editData.gambar && (
                   <img
-                    src={`https://desa-sembung-be.vercel.app/uploads/berita/${editData.gambar}`}
+                    src={`https://desa-sembung-be-production.up.railway.app/uploads/berita/${editData.gambar}`}
                     alt="Foto saat ini"
                     className="mb-2 h-32 rounded-xl object-cover border"
                   />

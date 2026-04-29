@@ -23,7 +23,7 @@ const KelolaStatistik = () => {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        "https://desa-sembung-be.vercel.app/api/statistik",
+        "https://desa-sembung-be-production.up.railway.app/api/statistik",
       );
       setStats(res.data);
     } catch (err) {
@@ -54,7 +54,7 @@ const KelolaStatistik = () => {
   const handleSave = async (id) => {
     try {
       await axios.put(
-        `https://desa-sembung-be.vercel.app/api/statistik/${id}`,
+        `https://desa-sembung-be-production.up.railway.app/api/statistik/${id}`,
         {
           value: tempValue,
         },

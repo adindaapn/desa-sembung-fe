@@ -16,9 +16,12 @@ const LupaPassword = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("https://desa-sembung-be.vercel.app/api/auth/send-otp", {
-        identifier: formData.identifier,
-      });
+      await axios.post(
+        "https://desa-sembung-be-production.up.railway.app/api/auth/send-otp",
+        {
+          identifier: formData.identifier,
+        },
+      );
       alert("Kode OTP telah dikirim ke nomor WhatsApp Anda.");
       setStep(2);
     } catch (err) {
@@ -33,7 +36,7 @@ const LupaPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://desa-sembung-be.vercel.app/api/auth/reset-password-otp",
+        "https://desa-sembung-be-production.up.railway.app/api/auth/reset-password-otp",
         formData,
       );
       alert("Password berhasil diubah! Silakan login.");

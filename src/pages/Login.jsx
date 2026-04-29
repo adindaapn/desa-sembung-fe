@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://desa-sembung-be.vercel.app/api/auth/login",
+        "https://desa-sembung-be-production.up.railway.app/api/auth/login",
         {
           identifier: identifier,
           password: password,

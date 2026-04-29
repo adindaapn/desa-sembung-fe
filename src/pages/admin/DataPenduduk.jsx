@@ -14,7 +14,7 @@ const DataPenduduk = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "https://desa-sembung-be.vercel.app/api/auth/warga",
+        "https://desa-sembung-be-production.up.railway.app/api/auth/warga",
       );
       setPenduduk(res.data);
     } catch (err) {
