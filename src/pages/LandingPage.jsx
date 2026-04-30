@@ -213,7 +213,8 @@ const LandingPage = () => {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={`https://desa-sembung-be-production.up.railway.app/uploads/berita/${item.gambar}`}
+                    /* ✅ Langsung pakai URL Cloudinary dari DB */
+                    src={item.gambar}
                     className="h-52 md:h-60 w-full object-cover group-hover:scale-105 transition duration-500"
                     alt={item.judul}
                     onError={(e) =>
