@@ -246,10 +246,15 @@ const DetailPengajuan = () => {
                 </h3>
                 <a
                   href={
-                    detail.file_hasil?.startsWith("http")
+                    detail.file_hasil?.includes("cloudinary.com")
                       ? detail.file_hasil
-                      : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.file_hasil}`
+                          .replace("/image/upload/", "/raw/upload/")
+                          .replace("/video/upload/", "/raw/upload/")
+                      : detail.file_hasil?.startsWith("http")
+                        ? detail.file_hasil
+                        : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.file_hasil}`
                   }
+                  download
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition font-bold text-xs shadow-sm"
