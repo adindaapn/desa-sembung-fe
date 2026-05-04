@@ -216,9 +216,14 @@ const DetailPengajuan = () => {
               {detail.path_file ? (
                 <a
                   href={
-                    detail.path_file?.startsWith("http")
-                      ? detail.path_file
-                      : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`
+                    detail.path_file?.includes(".pdf")
+                      ? detail.path_file.replace(
+                          "/image/upload/",
+                          "/raw/upload/",
+                        )
+                      : detail.path_file?.startsWith("http")
+                        ? detail.path_file
+                        : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`
                   }
                   target="_blank"
                   rel="noreferrer"
