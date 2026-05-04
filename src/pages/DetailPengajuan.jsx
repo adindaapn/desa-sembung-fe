@@ -229,7 +229,7 @@ const DetailPengajuan = () => {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-100 transition font-bold text-xs"
                 >
-                  📄 Unduh Berkas Persyaratan
+                  📄 Lihat Berkas Persyaratan
                 </a>
               ) : (
                 <p className="text-red-500 text-xs italic">
