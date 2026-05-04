@@ -220,7 +220,7 @@ const DetailPengajuan = () => {
                       ? detail.path_file.replace(
                           "/image/upload/",
                           "/raw/upload/",
-                        )
+                        ) + "?response-content-disposition=inline"
                       : detail.path_file?.startsWith("http")
                         ? detail.path_file
                         : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`
