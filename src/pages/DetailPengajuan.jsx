@@ -220,7 +220,7 @@ const DetailPengajuan = () => {
                       ? detail.path_file.replace(
                           "/image/upload/",
                           "/raw/upload/",
-                        ) + "?response-content-disposition=inline"
+                        )
                       : detail.path_file?.startsWith("http")
                         ? detail.path_file
                         : `https://desa-sembung-be-production.up.railway.app/uploads/${detail.path_file}`
@@ -229,7 +229,7 @@ const DetailPengajuan = () => {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-100 transition font-bold text-xs"
                 >
-                  📄 Lihat Berkas Persyaratan
+                  📄 Unduh Berkas Persyaratan
                 </a>
               ) : (
                 <p className="text-red-500 text-xs italic">
