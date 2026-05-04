@@ -219,7 +219,7 @@ const DetailPengajuan = () => {
                     detail.path_file?.includes(".pdf")
                       ? detail.path_file.replace(
                           "/image/upload/",
-                          "/image/upload/fl_attachment/",
+                          "/raw/upload/",
                         )
                       : detail.path_file?.startsWith("http")
                         ? detail.path_file
